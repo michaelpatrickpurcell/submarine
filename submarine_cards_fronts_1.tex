@@ -1,0 +1,26 @@
+\documentclass{standalone}
+\usepackage{submarine}
+
+\pagecolor{Blue}
+\color{lightgray!50}
+\begin{document}
+\begin{tikzpicture}
+\path (-105mm, -148.5mm) -- (105mm, 148.5mm);
+
+\pic at (-\horizdist,\vertdist) {actioncardfront={\textcolor{Goldenrod}{MOVE 3}\\[1.0ex]\textcolor{gray}{LOUD}}{DIVE\\[1.0ex]\textcolor{gray}{DEEP}}};
+\pic at (0\horizdist,\vertdist) {actioncardfront={MOVE 1\\[1.0ex]\textcolor{gray}{QUIET}}{\textcolor{Goldenrod}{PING}\\[1.0ex]\textcolor{gray}{LOUD}}};
+\pic at (\horizdist,\vertdist) {actioncardfront={\textcolor{Goldenrod}{MOVE 3}\\[1.0ex]\textcolor{gray}{LOUD}}{ENCRYPT}};
+
+\pic at (-\horizdist,0\vertdist) {actioncardfront={MOVE 1\\[1.0ex]\textcolor{gray}{QUIET}}{\textcolor{Goldenrod}{LAUNCH}\\[1.0ex]\textcolor{gray}{LOUD}}};
+\pic at (0\horizdist,0\vertdist) {actioncardfront={MOVE 2}{\textcolor{Goldenrod}{LAUNCH}\\[1.0ex]\textcolor{gray}{LOUD}}};
+\pic at (\horizdist,0\vertdist) {actioncardfront={MOVE 2}{\textcolor{Goldenrod}{SHOOT}\\[1.0ex]\textcolor{gray}{LOUD}}};
+
+%\pic at (-\horizdist,-\vertdist) {hexlocationcardp1={lightgray!50}};
+\pic at (-\horizdist,-\vertdist) {locationcardp1={lightgray!50}};
+\pic at (0\horizdist,-\vertdist) {actioncardfront={MOVE 2}{\textcolor{Goldenrod}{LISTEN}\\[1.0ex]\textcolor{gray}{QUIET}}};
+%\pic at (\horizdist,-\vertdist) {hexlocationcardp2={lightgray!50}};
+\pic at (\horizdist,-\vertdist) {locationcardp2={lightgray!50}};
+
+
+\end{tikzpicture}
+\end{document}

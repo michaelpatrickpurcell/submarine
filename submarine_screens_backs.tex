@@ -1,0 +1,13 @@
+\documentclass{standalone}
+\usepackage{submarine}
+
+\begin{document}
+\begin{tikzpicture}
+\path (-105mm, -148.5mm) -- (105mm, 148.5mm);
+
+\pic[rotate=-90, transform shape] at (-3\horizdist/4,0\vertdist/2) {playerscreenback};
+
+\pic[rotate=-90, transform shape] at (3\horizdist/4,0\vertdist/2) {playerscreenback};
+
+\end{tikzpicture}
+\end{document}
