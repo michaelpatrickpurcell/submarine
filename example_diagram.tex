@@ -1,0 +1,19 @@
+\documentclass{standalone}
+\usepackage{submarine}
+
+\begin{document}
+\begin{tikzpicture}
+\node[inner sep=0pt] at (-3in,4in) {\includegraphics{action_card_back.png}};
+\node[inner sep=0pt] at (0,4in) {\includegraphics{action_card_back.png}};
+\node[inner sep=0pt] at (3in,4in) {\includegraphics{action_card_back.png}};
+
+%\node[inner sep=0pt] at (-1.5in,0in) {\includegraphics{action_card_back.png}};
+\node[draw, dashed, Blue, ultra thick, minimum height=2.5in, minimum width=3.5in] at (-2in, 0) {\setmainfont[Scale=2.0]{Roboto}\Huge (a)};
+\node[inner sep=0pt, rotate=-90] at (2in,0in) {\includegraphics{action_card.png}};
+
+\node[inner sep=0pt] at (-3in,-4in) {\includegraphics{action_card_back.png}};
+\node[inner sep=0pt] at (0,-4in) {\includegraphics{action_card_back.png}};
+\node[inner sep=0pt] at (3in,-4in) {\includegraphics{action_card_back.png}};
+
+\end{tikzpicture}
+\end{document}

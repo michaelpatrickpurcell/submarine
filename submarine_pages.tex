@@ -1,0 +1,95 @@
+\documentclass[a6paper, parskip=half, DIV=14, 10pt]{scrartcl}
+
+\usepackage{submarinerules}
+
+
+\begin{document}
+{%
+\pagecolor{Blue}
+\color{lightgray!50}
+\thispagestyle{empty}
+		\enlargethispage{3.5\baselineskip} % Move the bottom line (author and date) down a bit
+\setmainfont[Scale=1.0]{Special Elite}
+\begin{center}
+\makeatletter
+{Version \@version}
+\makeatother
+
+
+\vfill
+
+\tikz{\node[inner sep=0pt] {\includegraphics[width=\textwidth]{uboat.png}};}
+
+\vspace{20ex}
+
+{
+\setmainfont[Scale=4]{Chakra Petch-Bold}
+\Huge
+\textcolor{Goldenrod}{PING}
+}
+
+\vspace{5ex}
+
+\tikz{\node[inner sep=0pt, xscale=-1] {\includegraphics[width=\textwidth]{uboat.png}};}
+
+\vfill{}
+
+\Large
+\setmainfont{Special Elite}
+Designed by Michael Purcell
+\end{center}
+}
+
+\newpage
+
+\pagecolor{white}
+
+\input{submarine_overview}
+
+\input{submarine_components}
+
+\newpage
+
+\input{submarine_set_up}
+
+\newpage
+
+%\input{submarine_gameplay}
+
+\input{submarine_tracking}
+
+\newpage
+
+\input{submarine_action_cards}
+
+\input{submarine_movement_actions}
+
+\newpage
+
+\input{submarine_utility_actions}
+
+\newpage
+
+\input{submarine_objectives}
+
+\newpage
+
+\input{submarine_repair}
+
+\input{submarine_game_end}
+
+\newpage
+
+\input{submarine_example}
+
+\vfill
+
+\hrulefill
+
+{\footnotesize \textbf{Design}: Michael Purcell \hfill \textbf{Contact}:~\href{mailto:mike@armiger.games}{mike@armiger.games}}
+
+\newpage
+\thispagestyle{empty}
+\pagecolor{Blue}
+\phantom{a}
+\end{document}

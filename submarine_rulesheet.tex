@@ -1,0 +1,97 @@
+\documentclass[a4paper, parskip=half, 11pt]{scrartcl}
+
+\usepackage{submarinerules}
+\usepackage[margin=1.5cm]{geometry}
+\usepackage{multicol}
+\setlength\columnsep{1.0cm}
+
+\begin{document}
+\pagestyle{empty}
+
+\begin{center}
+\begin{tikzpicture}
+\clip (-\textwidth/2, 0.5in) -- (\textwidth/2, 0.5in) -- (\textwidth/2, -0.5in) -- (-\textwidth/2, -0.5in) -- cycle;
+
+\node[fill=Blue, inner sep=0.4cm, minimum width=\textwidth] at (0,0) {\setmainfont[Scale=3.0]{Chakra Petch-Bold}\Huge \textcolor{Goldenrod}{PING}};
+
+\node[circle, minimum width=2.0in, fill=Goldenrod, opacity=1, inner sep=0pt] at (-2.375in, 0) {};
+\node[circle, minimum width=1.75in, fill=Blue] at (-2.375in, 0) {};
+\node[circle, minimum width=1.5in, fill=Goldenrod, opacity=1] at (-2.375in, 0) {};
+\node[circle, minimum width=1.25in, fill=Blue] at (-2.375in, 0) {};
+\node[circle, minimum width=1.0in, fill=Goldenrod, opacity=1] at (-2.375in, 0) {};
+\node[circle, minimum width=0.75in, fill=Blue] at (-2.375in, 0) {};
+\node[circle, minimum width=0.5in, fill=Goldenrod, opacity=1] at (-2.375in, 0) {};
+\node[circle, minimum width=0.25in, fill=Blue] at (-2.375in, 0) {};
+
+\node[circle, minimum width=2.0in, fill=Goldenrod, opacity=1] at (2.375in, 0) {};
+\node[circle, minimum width=1.75in, fill=Blue] at (2.375in, 0) {};
+\node[circle, minimum width=1.5in, fill=Goldenrod, opacity=1] at (2.375in, 0) {};
+\node[circle, minimum width=1.25in, fill=Blue] at (2.375in, 0) {};
+\node[circle, minimum width=1.0in, fill=Goldenrod] at (2.375in, 0) {};
+\node[circle, minimum width=0.75in, fill=Blue] at (2.375in, 0) {};
+\node[circle, minimum width=0.5in, fill=Goldenrod] at (2.375in, 0) {};
+\node[circle, minimum width=0.25in, fill=Blue] at (2.375in, 0) {};
+
+\node at (-2.375in, 0) {\includegraphics[height=0.425in]{uboat_dark.png}};
+\node[xscale=-1] at (2.375in, 0) {\includegraphics[height=0.425in]{uboat_dark.png}};
+\end{tikzpicture}
+\end{center}
+
+\vspace{0.8ex}
+
+\begin{multicols}{2}
+\input{submarine_overview}
+
+\input{submarine_components}
+
+\vspace{1ex}
+\input{submarine_set_up}
+\vfill\null
+\columnbreak
+
+
+%\input{submarine_gameplay}
+\input{submarine_tracking}
+
+\input{submarine_action_cards}
+
+\input{submarine_movement_actions}
+\vfill\null
+
+\end{multicols}
+
+\vfill
+
+\hrulefill
+
+{\textbf{Design}: Michael Purcell \hfill \makeatletter\textbf{Version:} \@version\makeatother \hfill \textbf{Contact}:~\href{mailto:mike@armiger.games}{mike@armiger.games}}
+
+\newpage
+
+\begin{multicols}{2}
+
+
+\input{submarine_utility_actions}
+
+\input{submarine_example}
+
+\vfill\null
+\columnbreak
+
+\input{submarine_objectives}
+
+\input{submarine_repair}
+
+\input{submarine_game_end}
+
+\vfill\null
+
+\end{multicols}
+
+\vfill
+
+\hrulefill
+
+{\textbf{Design}: Michael Purcell \hfill \makeatletter\textbf{Version:} \@version\makeatother \hfill \textbf{Contact}:~\href{mailto:mike@armiger.games}{mike@armiger.games}}
+
+\end{document}
