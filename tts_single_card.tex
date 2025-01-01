@@ -10,10 +10,13 @@
 \setlength{\vertdist}{\cardheight + 2\bleed + \vertspace}
 
 \pagecolor{Blue}
-\color{lightgray!50}
 
 \begin{document}
 \begin{tikzpicture}
-\pic at (0,0) {actioncardfront={MOVE 1\\[1.0ex]\textcolor{gray!75}{QUIET}}{\textcolor{Goldenrod}{PING}\\[1.0ex]\textcolor{gray!75}{LOUD}}};
+%\pic at (0,0) {actioncardfront={MOVE 1\\[1.0ex]\textcolor{gray!75}{QUIET}}{\textcolor{Goldenrod}{PING}\\[1.0ex]\textcolor{gray!75}{LOUD}}};
+
+
+\node[minimum width=2.5in, minimum height=3.5in, draw, line width=2mm, white, rounded corners=3mm] at (0,0) {};
+
 \end{tikzpicture}
 \end{document}

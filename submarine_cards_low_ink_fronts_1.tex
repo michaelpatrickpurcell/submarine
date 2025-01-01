@@ -1,0 +1,38 @@
+\documentclass{standalone}
+\usepackage{submarine}
+\usepackage[letterspace=50]{microtype}
+
+\setlength{\cardwidth}{2.5in}
+\setlength{\cardheight}{3.5in}
+\setlength{\bleed}{0.0625in}
+\setlength{\horizspace}{0.0in}
+\setlength{\horizdist}{\cardwidth + \horizspace}
+\setlength{\vertspace}{0.0in}
+\setlength{\vertdist}{\cardheight + \vertspace}
+
+
+%\pagecolor{Blue}
+%\color{lightgray!50}
+\color{Blue}
+\begin{document}
+\lsstyle
+\begin{tikzpicture}
+\path (-105mm, -148.5mm) -- (105mm, 148.5mm);
+
+\pic at (-\horizdist,\vertdist) {actioncardfrontalt={\textcolor{Goldenrod}{MOVE 3}}{\textcolor{gray!75}{LOUD}}{\textcolor{lightgray!50}{DIVE}}{\textcolor{gray!75}{QUIET}}};
+\pic at (0\horizdist,\vertdist) {actioncardfrontalt={\textcolor{lightgray!50}{MOVE 1}}{\textcolor{gray!75}{QUIET}}{\textcolor{Goldenrod}{PING}}{\textcolor{gray!75}{LOUD}}};
+\pic at (\horizdist,\vertdist) {actioncardfrontalt={\textcolor{Goldenrod}{MOVE 3}}{\textcolor{gray!75}{LOUD}}{\textcolor{lightgray!50}{ENCRYPT}}{}};
+
+\pic at (-\horizdist,0\vertdist) {actioncardfrontalt={\textcolor{lightgray!50}{MOVE 1}}{\textcolor{gray!75}{QUIET}}{\textcolor{Goldenrod}{TORPEDO}}{\textcolor{gray!75}{LOUD}}};
+\pic at (0\horizdist,0\vertdist) {actioncardfrontalt={\textcolor{lightgray!50}{MOVE 2}}{}{\textcolor{Goldenrod}{TORPEDO}}{\textcolor{gray!75}{LOUD}}};
+\pic at (\horizdist,0\vertdist) {actioncardfrontalt={\textcolor{lightgray!50}{MOVE 2}}{}{\textcolor{Goldenrod}{DECK GUN}}{\textcolor{gray!75}{LOUD}}};
+
+%\pic at (-\horizdist,-\vertdist) {hexlocationcardp1={lightgray!50}};
+\pic at (-\horizdist,-\vertdist) {locationcardp1={white}{Blue}};
+\pic at (0\horizdist,-\vertdist) {actioncardfrontalt={\textcolor{lightgray!50}{MOVE 2}}{}{\textcolor{Goldenrod}{LISTEN}}{\textcolor{gray!75}{QUIET}}};
+%\pic at (\horizdist,-\vertdist) {hexlocationcardp2={lightgray!50}};
+\pic at (\horizdist,-\vertdist) {locationcardp2={white}{Blue}};
+%
+
+\end{tikzpicture}
+\end{document}

@@ -11,6 +11,8 @@
 %\setmainfont[Scale=3.0]{Berpatroli Selamanya 402}
 \setmainfont[Scale=3.0]{Chakra Petch-Bold}
 
+\usepackage{contour}
+
 \newcommand{\la}{}%{\textasteriskcentered{}\hfill{}}
 \newcommand{\ra}{}%{\hfill{}\textasteriskcentered{}}
 
@@ -151,6 +153,36 @@
 	}
 }}
 
+\tikzset{pics/actioncardfrontalt/.style n args={4}{
+	code={
+		\begin{scope}
+		\clip (-\cardwidth/2 - \bleed, 0in) --%
+		      (-\cardwidth/2 - \bleed, \cardheight/2 + \bleed) --%
+		      (\cardwidth/2 + \bleed, \cardheight/2 + \bleed) --%
+		      (\cardwidth/2 + \bleed, -\cardheight/2 - \bleed) --%
+		      (-\cardwidth/2 - \bleed, -\cardheight/2 - \bleed) --%
+		      cycle;
+
+%	\node[minimum height=3.5in, minimum width=2.5in, draw] at (0,0) {};
+
+		\if\relax\detokenize{#2}\relax \node[rotate=180, transform shape, text width=2.25in, align=center] at (0, 0.875in) {\contour{Blue}{#1}};
+		\else \node[rotate=180, transform shape, text width=2.25in, align=center] at (0, 0.875in) {\contour{Blue}{#1}\\[1.0ex]\contour{Blue}{#2}};
+		\fi
+		
+		\if\relax\detokenize{#4}\relax \node[text width=2.25in, align=center] at (0, -0.875in) {\contour{Blue}{#3}};
+		\else \node[text width=2.25in, align=center] at (0, -0.875in) {\contour{Blue}{#3}\\[1.0ex]\contour{Blue}{#4}};
+		\fi
+
+		% Pattern for card front
+		\draw[line width=1mm] (-1.125in,0) -- (1.125in,0);
+
+		% Cutting guides for corners of the cards	
+		\pic () at (0,0) {cutguide={Blue}};
+		\end{scope}
+	}
+}}
+
+
 \tikzset{gridlines/.pic={
 		\foreach \i in {-2,-1,0,1,2}
 			\draw[very thick] (\i\gridsize,2\gridsize) -- (\i\gridsize,-2\gridsize);
@@ -159,12 +191,12 @@
 			\draw[very thick] (2\gridsize, \j\gridsize) -- (-2\gridsize, \j\gridsize);
 }}
 
-\tikzset{gridcell/.style={draw, very thick, fill=Blue,  minimum width=0.8cm, minimum height=0.8cm, rounded corners=1mm, inner sep = 0pt}}
+\tikzset{gridcell/.style={draw, very thick, fill=#1,  minimum width=0.8cm, minimum height=0.8cm, rounded corners=1mm, inner sep = 0pt}}
 
 \tikzset{gridcells/.pic={
 	\foreach \i in {-2,-1,0,1,2}
 		\foreach \j in {-2,-1,0,1,2}
-			\node[gridcell] at (\i\gridsize,\j\gridsize) {};      
+			\node[gridcell=#1] at (\i\gridsize,\j\gridsize) {};      
 
 	\node[gridcell, fill=Goldenrod] at (-2\gridsize, -2\gridsize) {};      
 	\node[gridcell, fill=Goldenrod] at (2\gridsize, -2\gridsize) {};      
@@ -212,7 +244,8 @@
 		\node[rotate=180] at (2\gridsize, -2\gridsize) {{\setmainfont{roboto}\Large \textcolor{gray}{Z}}};
 }}
 
-\tikzset{locationcardp1/.pic={
+\tikzset{pics/locationcardp1/.style n args={2}{
+	code={
 		\begin{scope}
 		\clip (-\cardwidth/2 - \bleed, 0in) --%
 		      (-\cardwidth/2 - \bleed, \cardheight/2 + \bleed) --%
@@ -222,19 +255,20 @@
 		      cycle;
 
 		\pic at (0,0) {gridlines};
-		\pic at (0,0) {gridcells};
+		\pic at (0,0) {gridcells={#1}};
 		\pic at (0,0) {gridlabelsp1};
 			   
-		\node[text width=2.25in, align=center] at (0,-1.4in) {PLAYER 1};	
-		\node[text width=2.25in, align=center, rotate=180, transform shape] at (0,1.4in) {\textcolor{gray!75}{PLAYER 2}};	
+		\node[text width=2.25in, align=center] at (0,-1.4in) {\contour{Blue}{\textcolor{lightgray!50}{PLAYER 1}}};	
+		\node[text width=2.25in, align=center, rotate=180, transform shape] at (0,1.4in) {\contour{Blue}{\textcolor{gray!75}{PLAYER 2}}};	
 
 		% Cutting guides for corners of the cards	
-		\pic () at (0,0) {cutguide={#1}};
+		\pic () at (0,0) {cutguide={#2}};
 		\end{scope}
 	}
-}
+}}
 
-\tikzset{locationcardp2/.pic={
+\tikzset{pics/locationcardp2/.style n args={2}{
+	code={
 		\begin{scope}
 		\clip (-\cardwidth/2 - \bleed, 0in) --%
 		      (-\cardwidth/2 - \bleed, \cardheight/2 + \bleed) --%
@@ -244,17 +278,17 @@
 		      cycle;
 
 		\pic at (0,0) {gridlines};
-		\pic at (0,0) {gridcells};
+		\pic at (0,0) {gridcells=#1};
 		\pic at (0,0) {gridlabelsp2};
 			   
-		\node[text width=2.25in, align=center] at (0,-1.4in) {\textcolor{gray!75}{PLAYER 1}};	
-		\node[text width=2.25in, align=center, rotate=180, transform shape] at (0,1.4in) {PLAYER 2};	
+		\node[text width=2.25in, align=center] at (0,-1.4in) {\contour{Blue}{\textcolor{gray!75}{PLAYER 1}}};	
+		\node[text width=2.25in, align=center, rotate=180, transform shape] at (0,1.4in) {\contour{Blue}{\textcolor{lightgray!50}{PLAYER 2}}};	
 
 		% Cutting guides for corners of the cards	
-		\pic () at (0,0) {cutguide={#1}};
+		\pic () at (0,0) {cutguide={#2}};
 		\end{scope}
 	}
-}
+}}
 
 \tikzset{hexgridlines/.pic={
 	\draw[very thick, white] (0,-6\inradius) -- (0,6\inradius);
